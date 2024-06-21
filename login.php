@@ -26,7 +26,7 @@ session_start();
   <!-- /.login-logo -->
   <div class="card" >
     <div class="card-body login-card-body" style="border-radius:200px">
-      <h4 style="color:black;" class="login-box-msg"><b><i>Tracker System</i></b></h4>
+      <h4 style="color:black;" class="login-box-msg"><b><i>User Login</i></b></h4>
       <div class="text-center">
         <!-- <img src="img/DEPEDLOGO.png" style="width:80%; padding-left:20px; position:relatives"> -->
       </div>
