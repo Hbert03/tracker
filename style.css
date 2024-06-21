@@ -1,0 +1,138 @@
+   .personnel-form {
+            width: 210mm;  
+            height: 297mm; 
+            box-sizing: border-box;
+            margin: auto;
+        }
+        .personnel-form .form-group {
+            margin-bottom: 15px;
+        }
+        .personnel-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .personnel-form input, .personnel-form textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .personnel-form1 {
+            width: 210mm;  
+            height: 297mm; 
+            box-sizing: border-box;
+         
+            margin: auto;
+        }
+        .personnel-form1 .form-group {
+            margin-bottom: 15px;
+        }
+        .personnel-form1 label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .personnel-form1 input, .personnel-form1 textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .personnel-form2 {
+            width: 210mm;  
+            height: 297mm; 
+            box-sizing: border-box;
+            margin: auto;
+        }
+        .personnel-form2 .form-group {
+            margin-bottom: 15px;
+        }
+        .personnel-form2 label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .personnel-form2 input, .personnel-form2 textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+   img.img{
+    display: block;
+    margin: 0 auto;
+
+   }   
+   img.img1{
+    margin-bottom:2em ;
+    height: 60px;
+    width: 700px;
+    margin: auto;
+    display: block;
+   } 
+
+   #img2{
+    height: 180px;
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+   }
+     
+     
+   p.title{
+    margin-top: -.5em;
+    text-align: center;
+    font-family: "Bookman Old Style", Georgia, serif;
+    font-weight: bold;
+    font-size: 18px;
+   }
+   p.line{
+    margin-top: -1em;
+    font-weight: bold;
+    text-align: center;
+   }
+   #printTable{
+    display: block;
+    margin-inline: 3em;
+    border:1px solid black;
+ 
+   }
+   #printTable2{
+    display: block;
+    margin-inline: 3em;
+    justify-content: center;
+   }
+   th{
+    border:1px solid black;
+    font-family: "Bookman Old Style", Georgia, serif;
+   }
+   /* tr{
+    border: 1px solid black;
+   } */
+ 
+   p.text{
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-family: "Bookman Old Style", Georgia, serif;
+    font-size: 12px;
+   }
+   p.signature{
+    font-weight: normal;
+    margin-top: -3em;
+    font-family: "Bookman Old Style", Georgia, serif;
+   }
+   .signature div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.signature div p {
+    margin: 0;
+}
+td{
+    font-family: "Bookman Old Style", Georgia, serif;
+    border:1px solid black;
+}
+
+h6{
+    font-family: "Bookman Old Style", Georgia, serif;
+}
