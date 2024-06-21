@@ -51,7 +51,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-          <a href="index.php" class="nav-link ">
+          <a href="_index.php" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard    
@@ -59,7 +59,7 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="pending.php" class="nav-link">
+            <a href="_pending.php" class="nav-link">
             <i class="fas fa-list"></i>
               <p>
                 Pending Approval
@@ -81,7 +81,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Travel Order</h1>
+          <h1 class="m-0">Locator Slip</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -104,15 +104,16 @@
           <!-- /.card-header -->
           <div class="card-body">
   
-                  <table id="travelOrder" class="table table-bordered table-striped">
+                  <table id="sample1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Name</th>
                         <th>Position</th>
-                        <th>Purpose Of Travel</th>
+                        <th>Permanent Position</th>
+                        <th>Purpose of Travel</th>
+                        <th>Date and Time:</th>
+                        <th>Official Type</th>
                         <th>Destination</th>
-                        <th>From:</th>
-                        <th>To:</th>
                         <th>Status</th>
                       </tr>
                     </thead>

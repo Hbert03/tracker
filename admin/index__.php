@@ -1,8 +1,8 @@
 <?php 
 include('header.php'); 
 include('class.php');
-$count2 = new Employee1();
-$count_locator_slip = $count2->getValue("count1");
+$count3 = new Employee3();
+$count_locator_slip = $count3->getValue("count3");
 ?>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
