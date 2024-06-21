@@ -46,8 +46,10 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
                 header("Location: index.php");
             } elseif ($user_id == 499) {
                 header("Location: index_.php");
-            } elseif (in_array($user_id, [334, 335])) {
+            } elseif (in_array($user_id, [334])) {
                 header("Location: index__.php");
+            }elseif (in_array($user_id, [335])) {
+                header("Location: _index.php");
             }
             exit();
         } else {

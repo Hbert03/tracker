@@ -84,6 +84,63 @@ class Employee2{
    
 }
 
+
+class Employee3{
+    private $count3;
+
+    public function __construct() {
+        include('../database.php');
+
+        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE status = 'Approved' AND office_id = '334' AND MONTH(date) = MONTH(NOW()) 
+        AND YEAR(date) = YEAR(NOW())";
+        
+        $query = $conn1->query($sql);
+        $Data = $query->fetch_assoc();
+
+        if ($Data) {
+            $this->count3 = $Data['total'];
+        }
+    }
+
+    public function getValue($part) {
+        switch ($part) {
+            case "count3":
+                return $this->count3;
+            default:
+                return null; 
+        }
+    }
+   
+}
+
+
+class Employee4{
+    private $count4;
+
+    public function __construct() {
+        include('../database.php');
+
+        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE status = 'Approved' AND office_id = '335' AND MONTH(date) = MONTH(NOW()) 
+        AND YEAR(date) = YEAR(NOW())";
+        
+        $query = $conn1->query($sql);
+        $Data = $query->fetch_assoc();
+
+        if ($Data) {
+            $this->count4 = $Data['total'];
+        }
+    }
+
+    public function getValue($part) {
+        switch ($part) {
+            case "count4":
+                return $this->count4;
+            default:
+                return null; 
+        }
+    }
+   
+}
 ?>
 
 

@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+?>
+
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -51,7 +53,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-          <a href="index.php" class="nav-link ">
+          <a href="_index.php" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard    
@@ -59,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="pending.php" class="nav-link">
+            <a href="#" class="nav-link active">
             <i class="fas fa-list"></i>
               <p>
                 Pending Approval
@@ -81,7 +83,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Travel Order</h1>
+          <h1 class="m-0">Pending Approval</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -99,21 +101,23 @@
       <div class="col-12">
         <div class="card mt-2">
           <div style="font-size:18px" class="card-header bg-dark">
-            <h3 class="card-title" style="color:white;">List of Approve This Month</h3>
+            <h3 class="card-title" style="color:white;">Pending Approval</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-  
-                  <table id="travelOrder" class="table table-bordered table-striped">
+          <div class="table-responsive">
+                  <table id="locatorslip1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Name</th>
                         <th>Position</th>
-                        <th>Purpose Of Travel</th>
+                        <th>Permanent Station</th>
+                        <th>Purpose of Travel</th>
+                        <th>Date & Time</th>
+                        <th>Official</th>
                         <th>Destination</th>
-                        <th>From:</th>
-                        <th>To:</th>
                         <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody></tbody>

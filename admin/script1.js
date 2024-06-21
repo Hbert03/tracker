@@ -384,6 +384,57 @@ $(document).ready(function() {
         })
         });
 
+
+
+
+        $(document).ready(function() {
+            function formatDateTime(dateTimeString) {
+                let date = new Date(dateTimeString);
+                
+                let optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+                let formattedDate = date.toLocaleDateString('en-US', optionsDate);
+            
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; 
+                let formattedTime = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+        
+                return `${formattedDate} ${formattedTime}`;
+            }
+        
+            $('#sample1').DataTable({
+                serverSide: true,
+                responsive: true,
+                lengthChange: true,
+                autoWidth: false,
+                ajax: {
+                    url: "fetch.php",
+                    type: "POST",
+                    data: { sample1: true },
+                    error: function(xhr, error, thrown) {
+                        console.log("Ajax request failed: " + thrown);
+                    }
+                },
+                columns: [
+                    { "data": "name" },
+                    { "data": "position" },
+                    { "data": "permanent_position" },
+                    { "data": "purpose_travel" },
+                    {
+                        "data": "datetime",
+                        "render": function(data, type, row) {
+                            return formatDateTime(data);
+                        }
+                    },
+                    { "data": "official" },
+                    { "data": "destination" },
+                    { "data": "status" },
+                ]
+            })
+            });
+
     $(document).ready(function() {
         function formatTimeTo12Hour(time) {
             let [hours, minutes] = time.split(':').map(Number);
@@ -438,4 +489,85 @@ $(document).ready(function() {
             ]
         });
         });
+    
+
+
+        $(document).ready(function() {
+            function formatDateTime(dateTimeString) {
+                let date = new Date(dateTimeString);
+                
+          
+                let optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+                let formattedDate = date.toLocaleDateString('en-US', optionsDate);
+            
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; 
+                let formattedTime = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+        
+                return `${formattedDate} ${formattedTime}`;
+            }
+        
+            let table = $('#locatorslip1').DataTable({
+                serverSide: true,
+                responsive: true,
+                lengthChange: true,
+                autoWidth: false,
+                ajax: {
+                    url: "fetch.php",
+                    type: "POST",
+                    data: { locatorslip1: true },
+                    error: function(xhr, error, thrown) {
+                        console.log("Ajax request failed: " + thrown);
+                    }
+                },
+                columns: [
+                    { "data": "name" },
+                    { "data": "position" },
+                    { "data": "permanent_position" },
+                    { "data": "purpose_travel" },
+                    {
+                        "data": "datetime",
+                        "render": function(data, type, row) {
+                            return formatDateTime(data);
+                        }
+                    },
+                    { "data": "official" },
+                    { "data": "destination" },
+                    { "data": "status" },
+                    { "data": "actions" }
+                ]
+            });
+        
+            $('#locatorslip1 tbody').on('click', '.approve-btn', function() {
+                let id = $(this).data('id');
+                updateStatus2(id, 'Approved');
+            });
+        
+            $('#locatorslip1 tbody').on('click', '.reject-btn', function() {
+                let id = $(this).data('id');
+                updateStatus2(id, 'Disapproved');
+            });
+        
+            function updateStatus2(id, status) {
+                $.ajax({
+                    url: 'update_status3.php',
+                    type: 'POST',
+                    data: {
+                        id: id,
+                        status: status
+                    },
+                    success: function(response) {
+                        table.ajax.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        });
+        
+
     
