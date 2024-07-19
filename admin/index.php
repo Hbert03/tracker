@@ -77,13 +77,14 @@ $count_pass_slip = $count3->getValue("count2");
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="pending.php" class="nav-link">
-            <i class="fas fa-list"></i>
-              <p>
-                Pending Approval
-              </p>
-            </a>
-          </li>
+      <a href="pending.php" class="nav-link" id="pending-approval-link">
+        <i class="fas fa-list"></i>
+        <p>
+          Pending Approval
+          <span id="pending-count" class="badge badge-danger"></span>
+        </p>
+      </a>
+    </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

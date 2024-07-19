@@ -55,7 +55,7 @@
             <a href="index.php" class="nav-link">
             <i class="fab fa-wpforms"></i>
               <p>
-                Travel Order  
+              Travel Order/Authority         
               </p>
             </a>
           </li>

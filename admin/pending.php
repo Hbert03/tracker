@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+$user_id = $_SESSION['user_id'];
+ ?>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -59,12 +61,13 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-            <i class="fas fa-list"></i>
-              <p>
-                Pending Approval
-              </p>
-            </a>
+          <a href="pending.php" class="nav-link active" id="pending-approval-link">
+        <i class="fas fa-list"></i>
+        <p>
+          Pending Approval
+          <span id="pending-count" class="badge badge-danger"></span>
+        </p>
+      </a>
           </li>
         </ul>
       </nav>
@@ -81,7 +84,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Travel Order</h1>
+          <h1 class="m-0">FORM</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -92,8 +95,7 @@
     </div><!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
-
-<section class="content">
+  <section class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -103,16 +105,29 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-  
-                  <table id="example4" class="table table-bordered table-striped">
-                    <thead>
+            <?php if (in_array($user_id, [340, 348])): ?>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#tab1">Pass Slip</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab2">Locator Slip</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+              <div id="tab1" class="tab-pane active"><br>
+                <div class="table-responsive">
+                  <table id="pass_slip" class="table table-bordered table-striped">
+                  <thead>
                       <tr>
                         <th>Name</th>
+                        <th>Section</th>
                         <th>Position</th>
-                        <th>Purpose Of Travel</th>
-                        <th>Destination</th>
-                        <th>From:</th>
-                        <th>To:</th>
+                        <th>Time Leave</th>
+                        <th>Time Return</th>
+                        <th>Purpose</th>
+                        <th>Date</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
@@ -121,17 +136,82 @@
                   </table>
                 </div>
               </div>
+              <div id="tab2" class="tab-pane fade"><br>
+                <div class="table-responsive">
+                <table id="locator1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Permanent Station</th>
+                    <th>Purpose of Travel</th>
+                    <th>Date & Time</th>
+                    <th>Official</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            <?php elseif (in_array($user_id, [481, 482])): ?>
+              <table id="example4" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Purpose Of Travel</th>
+                    <th>Destination</th>
+                    <th>From:</th>
+                    <th>To:</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            <?php elseif ($user_id == 334): ?>
+              <table id="locator_Slip" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Permanent Station</th>
+                    <th>Purpose of Travel</th>
+                    <th>Date & Time</th>
+                    <th>Official</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            <?php elseif ($user_id == 335): ?>
+              <table id="locatorslip1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Permanent Station</th>
+                    <th>Purpose of Travel</th>
+                    <th>Date & Time</th>
+                    <th>Official</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            <?php endif; ?>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col -->
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container-fluid -->
 </section>
-<!-- /.content -->
 </div>
 <?php include('footer.php');?>

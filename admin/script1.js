@@ -35,7 +35,16 @@ $(document).ready(function() {
             }
         },
         columns: [
-            { "data": "fullname" },
+            { 
+                "data": "fullname",
+                "render": function(data, type, row) {
+                    let fullName = data;
+                    if (row.join_users) {
+                        fullName += " <i class='fas fa-eye view-tagged-users' style='color:blue;' data-toggle='tooltip' title='" + row.join_users + "'></i>";
+                    }
+                    return fullName;
+                }
+            },
             { "data": "position" },
             { "data": "purpose_travel" },
             { "data": "destination" },
@@ -247,6 +256,85 @@ $(document).ready(function() {
 });
 
 
+
+$(document).ready(function() {
+    function formatDateTime(dateTimeString) {
+        let date = new Date(dateTimeString);
+        
+  
+        let optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+        let formattedDate = date.toLocaleDateString('en-US', optionsDate);
+    
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; 
+        let formattedTime = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+
+        return `${formattedDate} ${formattedTime}`;
+    }
+
+    let table = $('#locator1').DataTable({
+        serverSide: true,
+        responsive: true,
+        lengthChange: true,
+        autoWidth: false,
+        ajax: {
+            url: "fetch.php",
+            type: "POST",
+            data: { locator1: true },
+            error: function(xhr, error, thrown) {
+                console.log("Ajax request failed: " + thrown);
+            }
+        },
+        columns: [
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "permanent_position" },
+            { "data": "purpose_travel" },
+            {
+                "data": "datetime",
+                "render": function(data, type, row) {
+                    return formatDateTime(data);
+                }
+            },
+            { "data": "official" },
+            { "data": "destination" },
+            { "data": "status" },
+            { "data": "actions" }
+        ]
+    });
+
+    $('#locator1 tbody').on('click', '.approve-btn', function() {
+        let id = $(this).data('id');
+        updateStatus2(id, 'Approved');
+    });
+
+    $('#locator1 tbody').on('click', '.reject-btn', function() {
+        let id = $(this).data('id');
+        updateStatus2(id, 'Disapproved');
+    });
+
+    function updateStatus2(id, status) {
+        $.ajax({
+            url: 'update_status3.php',
+            type: 'POST',
+            data: {
+                id: id,
+                status: status
+            },
+            success: function(response) {
+                table.ajax.reload();
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+});
+
+
 $(document).ready(function() {
     function formatDate(dateString) {
         let date = new Date(dateString);
@@ -267,7 +355,16 @@ $(document).ready(function() {
             }
         },
         columns: [
-            { "data": "fullname" },
+            { 
+                "data": "fullname",
+                "render": function(data, type, row) {
+                    let fullName = data;
+                    if (row.join_users) {
+                        fullName += " <i class='fas fa-eye view-tagged-users' style='color:blue;' data-toggle='tooltip' title='" + row.join_users + "'></i>";
+                    }
+                    return fullName;
+                }
+            },
             { "data": "position" },
             { "data": "purpose_travel" },
             { "data": "destination" },
@@ -570,4 +667,31 @@ $(document).ready(function() {
         });
         
 
-    
+        // $(document).ready(function() {
+        //     function fetchPendingCount() {
+        //       $.ajax({
+        //         url: 'fetch1.php',
+        //         method: 'GET',
+        //         dataType: 'json',
+        //         success: function(data) {
+        //           if(data.count > 0) {
+        //             $('#pending-count').text(data.count).show();
+        //           } else {
+        //             $('#pending-count').hide();
+        //           }
+        //         },
+        //         error: function() {
+        //           console.error('Failed to fetch pending count.');
+        //         }
+        //       });
+        //     }
+          
+         
+        //     fetchPendingCount();
+        //     setInterval(fetchPendingCount, 60000); 
+          
+           
+        //     $('#pending-approval-link').click(function() {
+        //       $('#pending-count').hide();
+        //     });
+        //   });

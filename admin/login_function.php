@@ -14,7 +14,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $pass = validate($_POST['password']);
     $pass = md5($pass);
 
-    $sql = "SELECT * FROM tbl_user WHERE useraccount='$user' AND password='$pass'";
+    $sql = "SELECT * FROM tbl_user WHERE username='$user' AND password='$pass'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) === 1) {
@@ -23,10 +23,10 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         $user_id = $_SESSION['user_id'];
 
         $user_groups = [
-            340 => [340, 339, 347, 348, 351, 352, 349, 350, 341],
-            481 => [340, 339, 347, 348, 351, 352, 349, 350, 341],
-            482 => [340, 339, 347, 348, 351, 352, 349, 350, 341],
-            499 => [340, 339, 347, 348, 351, 352, 349, 350, 341],
+            340 => [340, 339, 347, 348, 351, 352, 349, 350, 341, 334, 335, 484, 487, 491, 332, 482],
+            481 => [340, 339, 347, 348, 351, 352, 349, 350, 341, 334, 335, 484, 487, 491, 332, 482],
+            482 => [340, 339, 347, 348, 351, 352, 349, 350, 341, 334, 335, 484, 487, 491, 332, 482],
+            348 => [340, 339, 347, 348, 351, 352, 349, 350, 341, 334, 335, 484, 487, 491, 332, 482],
             334 => [334],
             335 => [335],
         ];
@@ -42,20 +42,12 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
                 $_SESSION['office_name'] = $user_data['office_name'];
             }
             
-            if (in_array($user_id, [340, 481, 482])) {
+            if (in_array($user_id, [340, 481, 482, 348, 334, 335])) {
                 header("Location: index.php");
-            } elseif ($user_id == 499) {
-                header("Location: index_.php");
-            } elseif ($user_id == 334) {
-                header("Location: index__.php");
-            }elseif ($user_id == 335) {
-                header("Location: _index.php");
             }
             exit();
         } else {
-            $_SESSION['login'] = "Access Denied!";
-            $_SESSION['login_code'] = "error";
-            header("Location: login.php");
+            header("Location: _index.php");
             exit();
         }
     } else {

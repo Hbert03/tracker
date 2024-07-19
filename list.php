@@ -54,7 +54,7 @@
             <a href="index.php" class="nav-link">
             <i class="fab fa-wpforms"></i>
               <p>
-                Travel Order  
+              Travel Order/Authority    
               </p>
             </a>
           </li>
@@ -210,153 +210,61 @@
 </div>
 
 
-
-  <div class="personnel-form" id="personnelForm" style="display:none;">
-       <img class="img" src="img/header.JPG">
-       <p class="line">_____________________________________________________________</p>
-       <p style="font-size:15px" class="title">TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</p>
-       <div class="table">
-       <table id="printTable" class="printTable">
-            <tr>
-                <th style="width:100px">Name</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Position/Designation</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Permanent Station</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Purpose of Travel<br><span><p style="font-size: 12px">(must be supported by attachment)</p></span></th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Host of Activity</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Inclusive Dates</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Destination</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th style="width:100px">Fund Source</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th colspan="2">  <p class="text">I hereby attest that the information on this form and in the supporting documents attached hereto are true and correct:</p>
-        <div class="signature">
-                        <div>
-                            <p class="name-signature1"></p>
-                            <p>Date: ____________________</p>
-                        </div>
-                       
-                        <p class="signature">Name and Signature of Requesting Employee</p>
-                    </div>
-        </div></th>
-            </tr>
-            <tr>
-                <th colspan="2"> 
-                <h6 style="margin-bottom:1em; font-weight:bold; margin-top:-.8em">RECOMMENDING APPROVAL:</h6>
-                    <p class="text">This is to certify that the trip of the requesting employee satisfies all the minimum conditions for authorized official travel and that alternatives to travel are insufficient for purpose stated herein.</p>
-                 <div class="signature mt-4">
-          
-                        <div>
-                            <p class="name-signature2">JAYVY C. VEGAFRIA</p>
-                            <p>Date: ____________________</p>
-                        </div>
-                       
-                        <p class="signature">OIC Assistant Schools Division Superintendent</p>
-                    </div>
-                 </div></th>
-                      </tr>
-                   <tr>
-                   <th colspan="2">  
-                   <h6 style="margin-bottom:1em; font-weight:bold; margin-top:-.8em">APPROVED:</h6>
-                     <div class="signature mt-4">
-                  
-                        <div>
-                            <p class="name-signature3">EDWIN R. MARIBOJOC, CESO V</p>
-                            <p>Date: ____________________</p>
-                        </div>
-                       
-                        <p class="signature">Schools Division Superintendent</p>
-                    </div>
-        </div></th>
-            </tr>
-        </table>
-        <img class="img1" src="img/footer.jpg">
-       </div>
-    </div>
-
-    
-    <div class="personnel-form1" id="personnelForm1" style="display:none;">
-       <img id="img2" class="img2" src="img/header1.JPG">
-       <p class="line">_____________________________________________________________</p>
-       <p class="title">PASS SLIP</p>
-      <div class="card" style="border:1px solid gray; margin-right: 2em; margin-left:2em">
-       <div class="px-2 d-flex mt-1">
-       <div class="flex-grow-1"></div>
-                <label>Date:</label>
-                <input class="form-control w-25 mb-5 date">
-       </div>
-       <div class="px-2 d-flex">
-      <label>Name:</label>
-      <input class="form-control w-100 mb-3 name">
-      </div>
-      <div class="px-2 d-flex">
-      <label>Section:</label>
-      <input class="form-control w-100 mb-3 section">
-      </div>
-      <div class="px-2 d-flex">
-      <label>Position:</label>
-      <input class="form-control w-100 mb-3 position">
-      </div>
-      <div class="d-flex justify-content-between mb-1">
-        <div class="px-2 d-flex align-items-center">
-            <label class="">Time (Leave):</label>
-            <input class="form-control w-100 time_leave">
+<div class="personnel-form1" id="personnelForm1" style="display:none;">
+    <img id="img2" class="img2" src="img/header1.JPG">
+    <p class="line">_____________________________________________________________</p>
+    <p class="title">PASS SLIP</p>
+    <div class="custom-card" style="border:1px solid gray; margin-right: 2em; margin-left:2em">
+        <div class="px-2 d-flex mt-1">
+            <div class="flex-grow-1"></div>
+            <label>Date:</label>
+            <input class="form-control w-25 mb-5 date">
         </div>
-        <div class="px-2 d-flex align-items-center">
-            <label class="">Time (Return):</label>
-            <input class="form-control w-100 time_return">
+        <div class="px-2 d-flex">
+            <label>Name:</label>
+            <input class="form-control w-100 mb-3 name">
         </div>
-      </div>
-      <div class="px-2 d-flex">
-      <label>Purpose:</label>
-      <input class="ms-2 form-control w-100 mb-3 purpose">
-      </div>
-      <div>
-        <p style="margin-right:4em; text-align:right">_________________</p>
-       <label style="margin-top:-1em; margin-right:7em; text-align:right">Signature</label>
-       </div>
-       <div>
-       <p style="text-align:left" class="px-2 mb-4">IMMEDIATE HEAD:</p>
-       </div>
+        <div class="px-2 d-flex">
+            <label>Section:</label>
+            <input class="form-control w-100 mb-3 section">
+        </div>
+        <div class="px-2 d-flex">
+            <label>Position:</label>
+            <input class="form-control w-100 mb-3 position">
+        </div>
+        <div class="d-flex justify-content-between mb-1">
+            <div class="px-2 d-flex align-items-center">
+                <label class="">Time (Leave):</label>
+                <input class="form-control w-100 time_leave">
+            </div>
+            <div class="px-2 d-flex align-items-center">
+                <label class="">Time (Return):</label>
+                <input class="form-control w-100 time_return">
+            </div>
+        </div>
+        <div class="px-2 d-flex">
+            <label>Purpose:</label>
+            <input class="ms-2 form-control w-100 mb-3 purpose">
+        </div>
+        <div>
+            <p style="margin-right:4em; text-align:right">_________________</p>
+            <label style="margin-top:-1em; margin-right:7em; text-align:right">Signature</label>
+        </div>
+        <div>
+            <p style="text-align:left" class="px-2 mb-4">Administrative Office:</p>
+        </div>
         <div style="text-align:center;" class="mb-5">
-          <p>Signature Over Printed Name</p>
+            <p><b>ARMANDO B. PASOK</b></p>
+            <p style="margin-top: -1.3em">Signature Over Printed Name</p>
         </div>
-       </div>
-       <img style="margin-top: 20em" class="img1" src="img/footer.jpg">
-       </div>
-    
-   
+    </div>
+    <img style="margin-top: 20em" class="img1" src="img/footer.jpg">
+</div>
 
 
 
 
-
-
-
-
-
-
+  
     <div class="personnel-form2" id="personnelForm2" style="display:none;">
         <p  style="margin-left:4em; margin-top:2em; font-family:'Bookman Old Style', Georgia, serif">REVISED ANNEX E</p>
        <img class="img" id="img2" src="img/header1.JPG">
@@ -427,4 +335,83 @@
        </div>
     </div>
 
+
+
+    <div class="personnel-form" id="personnelForm" style="display:none">
+    <img class="img" src="img/header.JPG">
+    <p class="line">_____________________________________________________________</p>
+    <p style="font-size:15px" class="title">TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</p>
+    <div class="table">
+      <table id="printTable" class="printTable">
+        <tr>
+          <th style="width:100px">Name</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Position/Designation</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Permanent Station</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Purpose of Travel<br><span><p style="font-size: 12px">(must be supported by attachment)</p></span></th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Host of Activity</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Inclusive Dates</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Destination</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th style="width:100px">Fund Source</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <p class="text">I hereby attest that the information on this form and in the supporting documents attached hereto are true and correct:</p>
+            <div class="signature">
+         
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <h6 style="margin-bottom:1em; font-weight:bold; margin-top:-.8em">RECOMMENDING APPROVAL:</h6>
+            <p class="text">This is to certify that the trip of the requesting employee satisfies all the minimum conditions for authorized official travel and that alternatives to travel are insufficient for purpose stated herein.</p>
+            <div class="signature3 mt-4">
+              <div>
+                <p class="name-signature3">JAYVY C. VEGAFRIA</p>
+                <p>Date: ____________________</p>
+              </div>
+              <p class="signature3">OIC Assistant Schools Division Superintendent</p>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <h6 style="margin-bottom:1em; font-weight:bold; margin-top:-.8em">APPROVED:</h6>
+            <div class="signature4 mt-4">
+              <div>
+                <p class="name-signature4">EDWIN R. MARIBOJOC, CESO V</p>
+                <p>Date: ____________________</p>
+              </div>
+              <p class="signature4">Schools Division Superintendent</p>
+            </div>
+          </th>
+        </tr>
+      </table>
+      <img class="img1" style="margin-top:1em" src="img/footer.jpg">
+    </div>
+</div>
+
+    
   <?php include('footer.php');?>

@@ -55,7 +55,7 @@
             <a href="#" class="nav-link active">
             <i class="fab fa-wpforms"></i>
               <p>
-                Travel Order     
+                Travel Order/Authority     
               </p>
             </a>
           </li>
@@ -97,7 +97,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Travel Order</h1>
+            <h1 class="m-0">Travel Order/Authority</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -108,53 +108,56 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!-- Main content -->
     <section class="content">
-     <div class="card">
+    <div class="card">
         <div class="card-header">
             <h4>Fill-up Form</h4>
         </div>
         <div class="card-body">
-            <form id="myForm" >
-    <div class="row">
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="name" id="name" value="<?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname'] . ' ' . $_SESSION['middlename'] . '. ' . $_SESSION['lastname'] : ''; ?>" readonly>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="position" id="position"  value="<?php echo isset($_SESSION['position']) ? $_SESSION['position'] : ''; ?>" readonly>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="permanent_station"  id="permanent_station" placeholder="Permanent Station" required>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="purpose_of_travel" id="purpose_of_travel" placeholder="Purpose of Travel" required>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="host_of_activity" id="host_of_activity" placeholder="Host of Activity" required>
-        </div>
-        <div class="col-md-6 mb-1 d-flex align-items-center">
-            <label class="mr-2">From:</label>
-            <input class="form-control mr-2" style="width: 45%;" type="date" name="start_date" id="start_date" required>
-            <label class="mr-2">To:</label>
-            <input class="form-control" style="width: 45%;" type="date" name="end_date" id="end_date" required>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="destination" id="destination" placeholder="Destination" required>
-        </div>
-        <div class="col-md-6 mb-1">
-            <input class="form-control" type="text" name="fund_source" id="fund_source" placeholder="Fund Source" required>
+            <form id="myForm">
+                <div class="row">
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="name" id="name" value="<?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname'] . ' ' . $_SESSION['middlename'] . '. ' . $_SESSION['lastname'] : ''; ?>" readonly>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="position" id="position" value="<?php echo isset($_SESSION['position']) ? $_SESSION['position'] : ''; ?>" readonly>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="permanent_station" id="permanent_station" placeholder="Permanent Station" required>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="purpose_of_travel" id="purpose_of_travel" placeholder="Purpose of Travel" required>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="host_of_activity" id="host_of_activity" placeholder="Host of Activity" required>
+                    </div>
+                    <div class="col-md-6 mb-1 d-flex align-items-center">
+                        <label class="mr-2">From:</label>
+                        <input class="form-control mr-2" style="width: 45%;" type="date" name="start_date" id="start_date" required>
+                        <label class="mr-2">To:</label>
+                        <input class="form-control" style="width: 45%;" type="date" name="end_date" id="end_date" required>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="destination" id="destination" placeholder="Destination" required>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <input class="form-control" type="text" name="fund_source" id="fund_source" placeholder="Fund Source" required>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                       <select class="form-control employee" multiple="multiple" name="employee[]"></select>
+                    </div>
+                </div>
+                
+                 <div class="card-footer text-center">
+                    <button type="button" class="btn btn-primary btn1" name="save">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="card-footer text-center">
-        <button type="button" class="btn btn-primary btn1" name="save">Submit</button>
-    </div>
-    </form>
-    </div>
-    </section>
-
-      
+</section>
   </div>
+
+  
   <!-- /.content-wrapper -->
 
   <?php include('footer.php');?>

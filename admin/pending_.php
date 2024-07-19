@@ -103,11 +103,10 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-  
                   <table id="pass_slip" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                      <th>Name</th>
+                        <th>Name</th>
                         <th>Section</th>
                         <th>Position</th>
                         <th>Time Leave</th>

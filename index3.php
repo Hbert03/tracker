@@ -55,7 +55,7 @@
             <a href="index.php" class="nav-link">
             <i class="fab fa-wpforms"></i>
               <p>
-                Travel Order     
+              Travel Order/Authority       
               </p>
             </a>
           </li>
@@ -140,11 +140,15 @@
     </div>
         <div class="col-md-12 mb-1 d-flex ">
         <div class="card w-50" style="margin-left:-.5em; width:22px">
-        <div class="form-check">
-         <label style="font-weight:normal">Official Business</label>
-        <input class="form-check-input" style="margin-left:1em; width:20px; height:20px" type="radio" name="official" id="flexRadioDefault1" value="Official Business" checked>
-        <label style="margin-left:3em; font-weight:normal">Official Time</label>
-        <input class="form-check-input" style="margin-left:1em; width:20px; height:20px" type="radio" name="official" id="flexRadioDefault2" value="Official Time">
+        <div class="form-check d-flex mt-2">
+        <label class="container">Official Business
+     <input type="radio" checked="checked" name="official" id="flexRadioDefault1" value="Official Business">
+      <span class="checkmark"></span>
+      </label>
+      <label class="container">Official Time
+      <input type="radio" name="official" id="flexRadioDefault2" value="Official Time">
+      <span class="checkmark"></span>
+      </label> 
       </div>
       </div>
       </div>
