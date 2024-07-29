@@ -47,7 +47,7 @@ session_start();
     <a href="../index.php"><span><i class="fas fa-arrow-alt-circle-left jumping"></i></i></span></a>
       <h4  style="color:black; font-family:'Bookman Old Style', Georgia, serif;" class="login-box-msg"><b><i>ADMINISTRATOR</i></b></h4>
       <div class="text-center">
-        <!-- <img src="img/DEPEDLOGO.png" style="width:80%; padding-left:20px; position:relatives"> -->
+        <img src="../img/DEPEDLOGO.png" style="width:80%; padding-left:20px; position:relatives">
       </div>
 
       <form action="login_function.php" method="post" >

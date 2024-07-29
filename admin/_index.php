@@ -1,8 +1,6 @@
 <?php 
 include('header.php'); 
-include('class.php');
-$count4 = new Employee4();
-$count_locator_slip = $count4->getValue("count4");
+
 ?>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -104,18 +102,18 @@ $count_locator_slip = $count4->getValue("count4");
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+<!-- 
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
+
         <div class="row">
          
-          <!-- ./col -->
+
           <div class="col-lg-12 col-12">
-            <!-- small box -->
+     
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><?php echo $count_locator_slip; ?></h3>
+                <h3></h3>
 
                 <p>Office of the SGOD</p>
               </div>
@@ -125,12 +123,8 @@ $count_locator_slip = $count4->getValue("count4");
               <a href="sgodlist.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
   
-          <!-- ./col -->
-
-        <!-- Main row -->
-</section>
+</section> -->
   </div>
   <!-- /.content-wrapper -->
  

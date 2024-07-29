@@ -1,18 +1,34 @@
-<?php 
- class Employee{
+<!-- <?php 
+class Employee {
     private $count;
 
     public function __construct() {
         include('../database.php');
 
-        $sql = "SELECT COUNT(*) as total FROM employee_tracker WHERE status = 'Approved' AND MONTH(date) = MONTH(NOW()) 
-        AND YEAR(date) = YEAR(NOW())";
-        
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $user_id = $_SESSION['user_id'];
+        $allowed_user_ids = $_SESSION['allowed_user_ids'];
+
+        $allowed_user_ids_str = implode(",", array_map('intval', $allowed_user_ids));
+
+        $sql = "SELECT COUNT(*) as total 
+                FROM employee_tracker 
+                WHERE 1=1
+                AND MONTH(date) = MONTH(NOW()) 
+                AND YEAR(date) = YEAR(NOW()) 
+                AND office_id IN ($allowed_user_ids_str)";
+
         $query = $conn1->query($sql);
         $Data = $query->fetch_assoc();
 
         if ($Data) {
             $this->count = $Data['total'];
+        } else {
+            $this->count = 0;
         }
     }
 
@@ -24,7 +40,6 @@
                 return null; 
         }
     }
-   
 }
 
 class Employee1{
@@ -33,8 +48,19 @@ class Employee1{
     public function __construct() {
         include('../database.php');
 
-        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE status = 'Approved' AND office_id IN (334, 335) AND MONTH(date) = MONTH(NOW()) 
-        AND YEAR(date) = YEAR(NOW())";
+        
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $user_id = $_SESSION['user_id'];
+        $allowed_user_ids = $_SESSION['allowed_user_ids'];
+
+        $allowed_user_ids_str = implode(",", array_map('intval', $allowed_user_ids));
+
+
+        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE 1=1 AND MONTH(date) = MONTH(NOW()) 
+        AND YEAR(date) = YEAR(NOW()) AND office_id IN ($allowed_user_ids_str)";
         
         $query = $conn1->query($sql);
         $Data = $query->fetch_assoc();
@@ -62,8 +88,17 @@ class Employee2{
     public function __construct() {
         include('../database.php');
 
-        $sql = "SELECT COUNT(*) as total FROM pass_slip WHERE status = 'Approved' AND MONTH(date_t) = MONTH(NOW()) 
-        AND YEAR(date_t) = YEAR(NOW())";
+                
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $user_id = $_SESSION['user_id'];
+        $allowed_user_ids = $_SESSION['allowed_user_ids'];
+
+        $allowed_user_ids_str = implode(",", array_map('intval', $allowed_user_ids));
+        $sql = "SELECT COUNT(*) as total FROM pass_slip WHERE 1=1 AND MONTH(date_t) = MONTH(NOW()) 
+        AND YEAR(date_t) = YEAR(NOW()) AND office_id IN ($allowed_user_ids_str)";
         
         $query = $conn1->query($sql);
         $Data = $query->fetch_assoc();
@@ -84,64 +119,4 @@ class Employee2{
    
 }
 
-
-class Employee3{
-    private $count3;
-
-    public function __construct() {
-        include('../database.php');
-
-        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE status = 'Approved' AND office_id = '334' AND MONTH(date) = MONTH(NOW()) 
-        AND YEAR(date) = YEAR(NOW())";
-        
-        $query = $conn1->query($sql);
-        $Data = $query->fetch_assoc();
-
-        if ($Data) {
-            $this->count3 = $Data['total'];
-        }
-    }
-
-    public function getValue($part) {
-        switch ($part) {
-            case "count3":
-                return $this->count3;
-            default:
-                return null; 
-        }
-    }
-   
-}
-
-
-class Employee4{
-    private $count4;
-
-    public function __construct() {
-        include('../database.php');
-
-        $sql = "SELECT COUNT(*) as total FROM locator_slip WHERE status = 'Approved' AND office_id = '335' AND MONTH(date) = MONTH(NOW()) 
-        AND YEAR(date) = YEAR(NOW())";
-        
-        $query = $conn1->query($sql);
-        $Data = $query->fetch_assoc();
-
-        if ($Data) {
-            $this->count4 = $Data['total'];
-        }
-    }
-
-    public function getValue($part) {
-        switch ($part) {
-            case "count4":
-                return $this->count4;
-            default:
-                return null; 
-        }
-    }
-   
-}
-?>
-
-
-
+?> -->

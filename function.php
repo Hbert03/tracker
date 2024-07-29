@@ -1,8 +1,9 @@
 <?php
 session_start();
 include('database.php');
- 
-if (isset($_POST['save'])){
+
+
+if (isset($_POST['save'])) {
     $hris_code = $_SESSION['hris_code'];
     $user_id = $_SESSION['user_id'];
     $name = $_POST['name'];
@@ -14,18 +15,29 @@ if (isset($_POST['save'])){
     $end_date = $_POST['end_date'];
     $destination = $_POST['destination'];
     $fund_source = $_POST['fund_source'];
+    $hris_join = isset($_POST['employee']) ? $_POST['employee'] : [];
 
     $query = "INSERT INTO employee_tracker (hris_code, fullname, position, station, purpose_travel, host_activity, date_start, date_end, destination, fund_source, office_id)
-    VALUES ('$hris_code','$name', '$position', '$permanent_station', '$purpose_of_travel', '$host_of_activity', '$start_date', '$end_date', '$destination', '$fund_source', '$user_id')";
+              VALUES ('$hris_code','$name', '$position', '$permanent_station', '$purpose_of_travel', '$host_of_activity', '$start_date', '$end_date', '$destination', '$fund_source', '$user_id')";
 
-    if (mysqli_query($conn1, $query)){
-    echo "1";
+    if (mysqli_query($conn1, $query)) {
+        $tracker_id = mysqli_insert_id($conn1);
+
+      
+        if (!empty($hris_join)) {
+            foreach ($hris_join as $hris_code_join) {
+                $query_employee_join = "INSERT INTO travel_join (travel_id, hris_code) 
+                                        VALUES ('$tracker_id', '$hris_code_join')";
+                
+                mysqli_query($conn1, $query_employee_join);
+            }
+        }
+
+        echo "1"; 
     } else {
-    echo "0";
+        echo "0"; 
     }
-   
 }
-
 
 
 if (isset($_POST['save2'])){
